@@ -1,7 +1,3 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
-(__TODO__: your project name)
-
 # pixipet
 
 ## Overview
@@ -13,8 +9,6 @@ and clean. Each pixipet comes hatched from an egg, and based on the user's care,
 
 The application will store Users and Pets.
 ** each user has 1 pet via reference
-
-(__TODO__: sample documents)
 
 An Example User:
 
