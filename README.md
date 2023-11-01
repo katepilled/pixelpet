@@ -2,25 +2,17 @@ The content below is an example project proposal / requirements document. Replac
 
 (__TODO__: your project name)
 
-# Shoppy Shoperson 
+# pixipet
 
 ## Overview
-
-(__TODO__: a brief one or two paragraph, high-level description of your project)
-
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
-
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
+pixipet is a web application inspired by the classic Tamagotchi children's game. Users are able to take on the role of a pet owner and nurture their own pixiet -- a virtual pet that users can feed, play with,
+and clean. Each pixipet comes hatched from an egg, and based on the user's care, can grow and thrive.
 
 
 ## Data Model
 
-(__TODO__: a description of your application's data and their relationships to each other) 
-
-The application will store Users, Lists and Items
-
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
+The application will store Users and Pets.
+** each user has 1 pet via reference
 
 (__TODO__: sample documents)
 
@@ -28,23 +20,23 @@ An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
+  username: "petlover",
   hash: // a password hash,
-  lists: // an array of references to List documents
+  pet: // reference to Pet document
 }
 ```
 
-An Example List with Embedded Items:
+An Example Pet:
 
 ```javascript
 {
-  user: // a reference to a User object
   name: "Breakfast foods",
-  items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
-  ],
-  createdAt: // timestamp
+  owner: // reference to User document
+  age: // Number of days since created
+  happiness_level: 90  // Number out of 100
+  hunger_level: 10  // Number out of 100
+  cleanliness:  100  // Number out of 100
+
 }
 ```
 
