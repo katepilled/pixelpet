@@ -8,7 +8,7 @@ and clean. Each pixipet comes hatched from an egg, and based on the user's care,
 ## Data Model
 
 The application will store Users and Pets.
-** each user has 1 pet via reference
+* each user has 1 pet via reference
 
 An Example User:
 
