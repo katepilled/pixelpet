@@ -37,14 +37,12 @@ An Example Pet:
 
 ## [Link to Commented First Draft Schema](db.mjs) 
 
-(__TODO__: create a first draft of your Schemas in db.mjs and link to it)
+[(db.mjs)](./master/db.mjs)
 
 ## Wireframes
 
-(__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.)
-
 /login - page to log in
-![login](documentation/log.png)
+![login](documentation/login.png)
 
 /register - page to log in
 ![register](documentation/register.png)
