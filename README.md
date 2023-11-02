@@ -37,7 +37,7 @@ An Example Pet:
 
 ## [Link to Commented First Draft Schema](db.mjs) 
 
-[(db.mjs)](./master/db.mjs)
+[(db.mjs)](./db.mjs)
 
 ## Wireframes
 
