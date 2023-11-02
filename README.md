@@ -63,31 +63,29 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 ## User Stories or Use Cases
 
-(__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://en.wikipedia.org/wiki/Use_case))
 
-1. as non-registered user, I can register a new account with the site
-2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
+1. As a new user, I can register an account.
+2. As an existing user, I can log into my account on the website.
+3. As a user, I can hatch my own pixipet.
+4. As a user, I can name my pixipet.
+5. As a user, I can feed, clean, and play with my pixipet to ensure its wellbeing.
+6. As a user, I can check on the stats of my pixipet to see if it is in good condition. 
+7. As a user, I can delete my current pixipet and hatch a new one if I wish. 
 
 ## Research Topics
 
-(__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
 
 * (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
-    * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-    * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) vue.js
-    * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
+    * I plan on using Passport.js for user authentication.
+    * Users should only be able to access any pages outside the log-in/register page when properly authenticated. 
+* (3 points) Employ configuration management
+    * I plan to utilize the dotenv library for configuration management in this project.
+    * It is particularly important to me to store certain information, such as database credentials, in an .env file to minimize security risks.
+* (2 points) Use CSS framework
+    * I plan on using tailwind.css for stylization in this project.
+    * I'm interested in tailwind.css in particular because of its extensive documentation and large community of users.
 
-10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit)
+10 points total out of 10 required points
 
 
 ## [Link to Initial Main Project File](app.mjs) 
