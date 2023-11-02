@@ -1,8 +1,8 @@
-# pixipet
+# pixelpet
 
 ## Overview
-pixipet is a web application inspired by the classic Tamagotchi children's game. Users are able to take on the role of a pet owner and nurture their own pixiet -- a virtual pet that users can feed, play with,
-and clean. Each pixipet comes hatched from an egg, and based on the user's care, can grow and thrive.
+pixelpet is a web application inspired by the classic Tamagotchi children's game. Users are able to take on the role of a pet owner and nurture their own pixelpet -- a virtual pet that users can feed, play with,
+and clean. Each pixelpet comes hatched from an egg, and based on the user's care, can grow and thrive.
 
 
 ## Data Model
@@ -66,11 +66,11 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 1. As a new user, I can register an account.
 2. As an existing user, I can log into my account on the website.
-3. As a user, I can hatch my own pixipet.
-4. As a user, I can name my pixipet.
-5. As a user, I can feed, clean, and play with my pixipet to ensure its wellbeing.
-6. As a user, I can check on the stats of my pixipet to see if it is in good condition. 
-7. As a user, I can delete my current pixipet and hatch a new one if I wish. 
+3. As a user, I can hatch my own pixelpet.
+4. As a user, I can name my pixelpet.
+5. As a user, I can feed, clean, and play with my pixelpet to ensure its wellbeing.
+6. As a user, I can check on the stats of my pixelpet to see if it is in good condition. 
+7. As a user, I can delete my current pixelpet and hatch a new one if I wish. 
 
 ## Research Topics
 
