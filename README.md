@@ -41,6 +41,9 @@ An Example Pet:
 
 ## Wireframes
 
+/ - app landing page
+![landing](documentation/landing.png)
+
 /login - page to log in
 ![login](documentation/login.png)
 
