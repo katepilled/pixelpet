@@ -43,17 +43,22 @@ An Example Pet:
 
 (__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.)
 
-/list/create - page for creating a new shopping list
+/login - page to log in
+![login](documentation/log.png)
 
-![list create](documentation/list-create.png)
+/register - page to log in
+![register](documentation/register.png)
 
-/list - page for showing all shopping lists
 
-![list](documentation/list.png)
+/hatch - page to hatch new egg
+![hatch](documentation/hatch.png)
 
-/list/slug - page for showing specific shopping list
+/name-pet - page to name new pixelpet
+![name pixelpet](documentation/pethatched.png)
 
-![list](documentation/list-slug.png)
+/pet - page to show pet stats
+![pixelpet](documentation/petpage.png)
+
 
 ## Site map
 
@@ -70,7 +75,6 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 4. As a user, I can name my pixelpet.
 5. As a user, I can feed, clean, and play with my pixelpet to ensure its wellbeing.
 6. As a user, I can check on the stats of my pixelpet to see if it is in good condition. 
-7. As a user, I can delete my current pixelpet and hatch a new one if I wish. 
 
 ## Research Topics
 
