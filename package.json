@@ -2,10 +2,10 @@
   "name": "final-project-katepilled",
   "version": "1.0.0",
   "description": "## Overview pixipet is a web application inspired by the classic Tamagotchi children's game. Users are able to take on the role of a pet owner and nurture their own pixiet -- a virtual pet that users can feed, play with, and clean. Each pixipet comes hatched from an egg, and based on the user's care, can grow and thrive.",
-  "main": "index.js",
+  "main": "landing.hbs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node app.mjs"
+    "start": "node app.mjs"
   },
   "repository": {
     "type": "git",
@@ -19,10 +19,22 @@
   },
   "homepage": "https://github.com/nyu-csci-ua-0467-001-002-fall-2023/final-project-katepilled#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "connect-ensure-login": "^0.1.1",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.53.0",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "hbs": "^4.2.0",
     "heroku": "^8.7.1",
     "mongoose": "^8.0.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "prettier": "3.1.0",
     "tailwindcss": "^3.3.5"
   }
 }
