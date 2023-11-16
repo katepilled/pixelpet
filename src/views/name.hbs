@@ -1,0 +1,16 @@
+<body class="bg-gray-100 p-8">
+
+  <h1 class="text-3xl font-bold mb-6">Name</h1>
+
+  <form action="/name" method="POST" class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">What do
+      you want to name your pet?</label>
+    <input type="text" name="name" id="name"
+      class="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500" minlength="3"
+      maxlength="15" required />
+
+    <button type="submit"
+      class="mt-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+  </form>
+
+</body>
