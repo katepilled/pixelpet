@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const petSchema = new mongoose.Schema({
+const PetSchema = new mongoose.Schema({
   name: { type: String, required: true },
   owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   age: { type: Number, required: true },
@@ -9,6 +9,6 @@ const petSchema = new mongoose.Schema({
   cleanliness: { type: Number },
 });
 
-const Pet = mongoose.model("Pet", petSchema);
+const Pet = mongoose.model("Pet", PetSchema);
 
 export default Pet;
