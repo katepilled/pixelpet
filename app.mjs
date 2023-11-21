@@ -89,7 +89,7 @@ app.post('/register', async (req, res) => {
 	});
 });
 
-app.get('/name', isAuthenticated, (req, res) => {
+app.get('/name', (req, res) => {
 	res.render('name');
 });
 
