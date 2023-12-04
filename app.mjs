@@ -180,7 +180,6 @@ app.get('/hatch', isAuthenticated, (req, res) => {
 // hatch endpoint, determines type of pet based on egg
 app.post('/hatch', async (req, res) => {
 	let pet;
-	console.log(req.body.egg);
 	if (req.body.egg === 'egg1') {
 		pet = new Pet({
 			type: 'cat',
@@ -197,10 +196,7 @@ app.post('/hatch', async (req, res) => {
 			owner: req.user._id,
 		});
 	}
-	console.log(pet.type);
 	await pet.save();
-	pet = await Pet.findOne({ owner: req.user._id });
-	console.log(pet.type);
 	res.redirect('/meeting');
 });
 
@@ -275,10 +271,15 @@ app.post('/pet/feed', async (req, res) => {
 	try {
 		const pet = await Pet.findOne({ owner: req.user._id });
 		if (pet) {
-			pet.hunger_level += 10;
+			if (pet.hunger_level + 10 > 100) {
+				// avoid mongoDB error
+				pet.hunger_level = 100;
+			} else {
+				pet.hunger_level += 10;
+			}
 			await pet.save();
 			// return new hunger level
-			res.json(pet.hunger_level);
+			return res.json(pet.hunger_level);
 		}
 	} catch (error) {
 		console.error(error);
@@ -289,9 +290,14 @@ app.post('/pet/play', async (req, res) => {
 	try {
 		const pet = await Pet.findOne({ owner: req.user._id });
 		if (pet) {
-			pet.happiness_level += 10;
+			if (pet.happiness_level + 10 > 100) {
+				// avoid mongoDB error
+				pet.happiness_level = 100;
+			} else {
+				pet.happiness_level += 10;
+			}
 			await pet.save();
-			res.json(pet.happiness_level);
+			return res.json(pet.happiness_level);
 		}
 	} catch (error) {
 		console.error(error);
@@ -302,16 +308,21 @@ app.post('/pet/clean', async (req, res) => {
 	try {
 		const pet = await Pet.findOne({ owner: req.user._id });
 		if (pet) {
-			pet.cleanliness += 10;
+			if (pet.cleanliness + 10 > 100) {
+				// avoid mongoDB error
+				pet.cleanliness = 100;
+			} else {
+				pet.cleanliness += 10;
+			}
 			await pet.save();
-			res.json(pet.cleanliness);
+			return res.json(pet.cleanliness);
 		}
 	} catch (error) {
 		console.error(error);
 	}
 });
 
-app.get('/warning', (req, res) => {
+app.get('/warning', isAuthenticated, (req, res) => {
 	res.render('warning');
 });
 
