@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "pixelpet is a web application inspired by the classic Tamagotchi children's game. Users are able to take on the role of a pet owner and nurture their own pixelpet -- a virtual pet that users can feed, play with, and clean. Each pixelpet comes hatched from an egg, and based on the user's care, can grow and thrive.",
   "main": "app.mjs",
+  
   "dependencies": {
     "abbrev": "^1.1.1",
     "accepts": "^1.3.8",
@@ -498,7 +499,8 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.mjs"
   },
   "repository": {
     "type": "git",
