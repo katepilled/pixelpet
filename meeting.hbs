@@ -1,0 +1,31 @@
+<body>
+	<h1 class='text-6xl font-cherry text-stroke text-grass mb-6 text-center'>
+		meet your new pet!
+	</h1>
+
+	<div>
+		{{#if_eq pet.type 'cat'}}
+			<img class='flex justify-center mb-8 mx-auto' src='/images/cat.png' alt='cat' />
+		{{else if_eq pet.type 'dog'}}
+			<img class='flex justify-center mb-8 mx-auto' src='/images/dog.png' alt='dog' />
+		{{else if_eq pet.type 'bunny'}}
+			<img class='flex justify-center mb-8 mx-auto' src='/images/bunny.png' alt='bunny' />
+		{{/if_eq}}
+	</div>
+
+	<div>
+		<form action='/name' method='POST' class='max-w-md mx-auto bg-white p-6 rounded-md shadow-md'>
+
+			<label class='block text-gray-700 text-sm font-bold mb-2' for='name'>
+				what do you want to name it?</label>
+			<input type='text' name='name' id='name'
+				class='w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:border-grass' minlength='3'
+				maxlength='15' required autofocus />
+			<div class='text-center'>
+				<button type='submit'
+					class='bg-grass text-white px-4 py-2 mt-4 rounded hover:bg-grass-hover focus:outline-none focus:shadow-outline-blue'>☆
+					name ☆</button>
+			</div>
+		</form>
+	</div>
+</body>
