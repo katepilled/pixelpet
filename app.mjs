@@ -339,6 +339,22 @@ app.get('/about', (req, res) => {
 	res.render('about');
 });
 
+app.get('/all', async (req, res) => {
+	let petNames =[];
+	// get all pet names
+	try {
+		const allPets = await Pet.find();
+
+		// map to an array of pet names
+		petNames = allPets.map((pet) => pet.name);
+		res.render('all', { pets: petNames });
+
+	} catch (error) {
+		console.error(error);
+		res.redirect('/pet');	
+	}
+});
+
 // 404 error handler
 app.use((req, res) => {
 	res.status(404).render('404');
