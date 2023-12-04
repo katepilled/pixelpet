@@ -1,17 +1,23 @@
-<body class="bg-gray-100 p-8">
-  <form action="/login" method="POST">
-    <div>
-      <label for="username"> username </label>
-      <input type="text" id="username" name="username" autocomplete="username" required autofocus />
-    </div>
-    <div>
-      <label for="password"> password </label>
-      <input type="text" id="password" name="password" required />
-    </div>
-    <div>
-      <button type="submit"> log in </button>
-    </div>
-
-  </form>
-
+<body class='flex justify-center'>
+	<form action='/login' method='POST' class='bg-white p-6 rounded-lg shadow-md w-full max-w-md mx-auto mt-36'>
+		<div class='my-4'>
+			<label for='username' class='block text-gray-700 text-sm font-bold mb-2'>username</label>
+			<input type='text' id='username' name='username'
+				class='w-full px-3 py-2 border rounded focus:outline-none focus:border-grass' autocomplete='username'
+				required autofocus />
+		</div>
+		<div class='mb-4'>
+			<label for='password' class='block text-gray-700 text-sm font-bold mb-2'>password</label>
+			<input type='password' id='password' name='password'
+				class='w-full px-3 py-2 border rounded focus:outline-none focus:border-grass' required />
+		</div>
+		{{#if errorMessage}}
+			<p class='text-center text-red-600 mb-2'>{{errorMessage}}</p>
+		{{/if}}
+		<div class='mb-4 text-center'>
+			<button type='submit'
+				class='bg-grass text-white px-4 py-2 rounded hover:bg-grass-hover focus:outline-none focus:shadow-outline-blue'>☆
+				log in ☆</button>
+		</div>
+	</form>
 </body>
