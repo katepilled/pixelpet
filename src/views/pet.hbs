@@ -33,7 +33,10 @@
 
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="js/pet.js" defer></script>
 </head>
+
 
 <body>
     <div class="fixed top-0 right-0 p-6 z-20">
@@ -107,124 +110,15 @@
             <button id="feedBtn" type='submit'
                 class='font-pixel bg-grass text-white px-4 py-2 rounded hover:bg-grass-hover'> feed </button>
         </form>
-        <form action='/pet/play' method='POST'>
-            <button id="playBtn" type='submit'
-                class='font-pixel bg-grass text-white px-4 py-2 rounded hover:bg-grass-hover'> play </button>
-        </form>
         <form action='/pet/clean' method='POST'>
             <button id="cleanBtn" type='submit'
                 class='font-pixel bg-grass text-white px-4 py-2 rounded hover:bg-grass-hover '> clean </button>
+        </form>
+        <form action='/pet/play' method='POST'>
+            <button id="playBtn" type='submit'
+                class='font-pixel bg-grass text-white px-4 py-2 rounded hover:bg-grass-hover'> play </button>
         </form>
     </div>
 
 
 </body>
-
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-<script>
-    document.addEventListener('DOMContentLoaded', main);
-
-    function main() {
-
-        const feedBtn = document.getElementById('feedBtn');
-        const playBtn = document.getElementById('playBtn');
-        const cleanBtn = document.getElementById('cleanBtn');
-
-        const hunger = document.getElementById('hunger');
-        const happiness = document.getElementById('happiness');
-        const cleanliness = document.getElementById('cleanliness');
-
-        const greeting = document.getElementById('greeting');
-
-        // update greeting
-        async function updateGreeting() {
-            try {
-                const res = await fetch('/pet/state', {
-                    method: 'GET',
-                })
-
-                const pet = await res.json();
-
-                const name = pet.name;
-                const hunger = pet.hunger_level;
-                const happiness = pet.happiness_level;
-                const cleanliness = pet.cleanliness;
-
-                if (hunger <= 50) {
-                    greeting.innerHTML = `${name} is hungry!`;
-                } else if (cleanliness <= 25) {
-                    greeting.innerHTML = `${name} needs a bath!`;
-                } else if (happiness <= 50) {
-                    greeting.innerHTML = `${name} wants to play!`;
-                } else {
-                    greeting.innerHTML = `${name} is so happy to see you!`;
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        // initial update
-        updateGreeting();
-
-        // feed pet
-        feedBtn.addEventListener('click', async function (event) {
-            event.preventDefault();
-            try {
-
-                const res = await fetch('/pet/feed', {
-                    method: 'POST',
-                })
-                if (!res.ok) {
-                    throw new Error('Failed to feed pet');
-                }
-                const newHunger = await res.json();
-                updateGreeting();
-                hunger.innerHTML = `${newHunger}% full`;
-
-            } catch (error) {
-                console.log(error);
-            }
-        });
-
-        // play with pet
-        playBtn.addEventListener('click', async function (event) {
-            event.preventDefault();
-            try {
-                const res = await fetch('/pet/play', {
-                    method: 'POST',
-                })
-                if (!res.ok) {
-                    throw new Error('Failed to play with pet');
-                }
-                const newHappiness = await res.json();
-                updateGreeting();
-                happiness.innerHTML = `${newHappiness}% happy`;
-
-            } catch (error) {
-                console.log(error);
-            }
-        });
-
-        // clean pet
-        cleanBtn.addEventListener('click', async function (event) {
-            event.preventDefault();
-            try {
-                const res = await fetch('/pet/clean', {
-                    method: 'POST',
-                })
-                if (!res.ok) {
-                    throw new Error('Failed to clean pet');
-                }
-                const newCleanliness = await res.json();
-                updateGreeting();
-                cleanliness.innerHTML = `${newCleanliness}% clean`;
-
-            } catch (error) {
-                console.log(error);
-            }
-        });
-
-    }
-
-</script>
